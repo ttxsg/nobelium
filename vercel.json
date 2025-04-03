@@ -1,6 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "build": {
+    "env": {
+      "NODE_VERSION": "16"
+    }
+  },
   "headers": [
     {
       "source": "/fonts/IBMPlexSansVar-Roman.woff2",
