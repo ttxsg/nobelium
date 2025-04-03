@@ -1,9 +1,9 @@
 const BLOG = {
-  title: 'unwrapping',
+  title: '相位展开',
   author: 'zhixin',
   email: '386857251@qq.com',
-  link: 'https://nobelium.vercel.app',
-  description: 'This site is an introduction to the methods of phase unwrapping and summarizes much of the method content,相位展开',
+  link: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
+  description: 'phase unwrapping',
   lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: 'auto', // ['light', 'dark', 'auto'],
