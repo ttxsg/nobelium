@@ -5,6 +5,7 @@ import { getTextContent } from 'notion-utils'
 import { FONTS_SANS, FONTS_SERIF } from '@/consts'
 import { useConfig } from '@/lib/config'
 import Toggle from '@/components/notion-blocks/Toggle'
+import EncryptedContent from '@/components/EncryptedContent'
 
 // Lazy-load some heavy components & override the renderers of some block types
 const components = {
@@ -13,7 +14,20 @@ const components = {
   // Code block
   Code: dynamic(async () => {
     return function CodeSwitch (props) {
-      switch (getTextContent(props.block.properties.language)) {
+      const language = getTextContent(props.block.properties.language)
+      const content = getTextContent(props.block.properties.title)
+      
+      // 检查是否是加密内容
+      if (language === 'encrypted') {
+        // 第一行作为密码
+        const lines = content.split('\n')
+        const password = lines[0].trim()
+        const encryptedContent = lines.slice(1).join('\n')
+        
+        return <EncryptedContent password={password}>{encryptedContent}</EncryptedContent>
+      }
+      
+      switch (language) {
         case 'Mermaid':
           return h(
             dynamic(() => {
