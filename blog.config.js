@@ -1,27 +1,27 @@
 const BLOG = {
-  title: 'unwrapping',
-  author: 'zhi xin',
-  email: '386857251@qq.com',
-  link: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
-  description: 'Various methods of phase unwrapping.',
-  lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
+  title: 'CRAIGARY',
+  author: 'Craig Hart',
+  email: 'i@craigary.net',
+  link: 'https://nobelium.vercel.app',
+  description: 'This gonna be an awesome website.',
+  lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#18181B', // use hex value, don't forget '#'
   path: '', // leave this empty unless you want to deploy Nobelium in a folder
-  since: 2025, // If leave this empty, current year will be used.
+  since: 2021, // If leave this empty, current year will be used.
   postsPerPage: 7,
-  sortByDate: true,
+  sortByDate: false,
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
-  socialLink: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
+  socialLink: 'https://twitter.com/craigaryhart',
   seo: {
-    keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','QGPU','TIE-unwrapping','DCT','PCG','MCF'],
-    googleSiteVerification: 'google-site-verification=9_77LKBrVh0jgrbY3s7DcrAC6RwPhlQ36LL651xFtno' // Remove the value or replace it with your own google site verification code
+    keywords: ['Blog', 'Website', 'Notion'],
+    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
@@ -38,7 +38,7 @@ const BLOG = {
   },
   comment: {
     // support provider: gitalk, utterances, cusdis
-    provider: 'cusdis', // leave it empty if you don't need any comment plugin
+    provider: '', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
       repo: '', // The repository of store comments
       owner: '',
@@ -51,7 +51,7 @@ const BLOG = {
       repo: ''
     },
     cusdisConfig: {
-      appId:'54ec4359-c393-44ed-a7bd-271c9d5ecb08', // data-app-id
+      appId: '', // data-app-id
       host: 'https://cusdis.com', // data-host, change this if you're using self-hosted version
       scriptSrc: 'https://cusdis.com/js/cusdis.es.js' // change this if you're using self-hosted version
     }
