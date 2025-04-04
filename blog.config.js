@@ -18,9 +18,9 @@ const BLOG = {
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
-  socialLink: 'https://twitter.com/craigaryhart',
+  socialLink: 'https://blog.csdn.net/weixin_43608857?type=blog',
   seo: {
-    keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','QGPU','TIE-unwrapping','DCT','PCG','MCF'],
+    keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','QGPU','TIE-unwrapping','DCT','PCG','MCF','相位展开','枝切法','最小成本流','深度学习相位展开','deeplearing unwrapping'],
     googleSiteVerification: 'google-site-verification=9_77LKBrVh0jgrbY3s7DcrAC6RwPhlQ36LL651xFtno' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
@@ -38,13 +38,13 @@ const BLOG = {
   },
   comment: {
     // support provider: gitalk, utterances, cusdis
-    provider: '', // leave it empty if you don't need any comment plugin
+    provider: 'gitalk', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
-      repo: '', // The repository of store comments
-      owner: '',
-      admin: [],
-      clientID: '',
-      clientSecret: '',
+      repo: 'nob', // The repository of store comments
+      owner: 'gitalk',
+      admin: [gitalk],
+      clientID: 'Ov23limh4RxcXueDdMUZ',
+      clientSecret: 'e4cd955c8a8b9b958a3380e970bfeec47783cd46',
       distractionFreeMode: false
     },
     utterancesConfig: {
