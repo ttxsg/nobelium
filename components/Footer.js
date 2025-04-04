@@ -1,5 +1,6 @@
 import { useConfig } from '@/lib/config'
-import Vercel from '@/components/Vercel'
+import CustomFooterLink from '@/components/CustomFooterLink' 
+
 const Footer = ({ fullWidth }) => {
   const BLOG = useConfig()
 
@@ -18,7 +19,7 @@ const Footer = ({ fullWidth }) => {
           <p>
             © {BLOG.author} {from === y || !from ? y : `${from} - ${y}`}
           </p>
-          <Vercel />
+          <CustomFooterLink />  {/* 替换原来的 <Vercel /> */}
         </div>
       </div>
     </div>
