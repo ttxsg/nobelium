@@ -17,12 +17,12 @@ const components = {
       const language = getTextContent(props.block.properties.language)
       const content = getTextContent(props.block.properties.title)
       
-      // 检查是否是加密内容
-      if (language === 'encrypted') {
-        // 第一行作为密码
-        const lines = content.split('\n')
-        const password = lines[0].trim()
-        const encryptedContent = lines.slice(1).join('\n')
+      // 检查是否是加密内容（以 "ENCRYPTED:" 开头的内容）
+      if (content.startsWith('ENCRYPTED:')) {
+        // 提取密码和加密内容
+        const firstLine = content.split('\n')[0]
+        const password = firstLine.replace('ENCRYPTED:', '').trim()
+        const encryptedContent = content.substring(content.indexOf('\n') + 1)
         
         return <EncryptedContent password={password}>{encryptedContent}</EncryptedContent>
       }
@@ -107,7 +107,28 @@ const components = {
 
   toggle_nobelium: ({ block, children }) => (
     <Toggle block={block}>{children}</Toggle>
-  )
+  ),
+
+  // 新增：添加 Callout 块识别加密内容
+  callout: ({ block, children }) => {
+    const text = getTextContent(block.properties?.title) || ''
+    if (text.startsWith('🔒')) {
+      // 查找 "password: xxx" 模式
+      const passwordMatch = text.match(/password:\s*(\S+)/i)
+      if (passwordMatch && passwordMatch[1]) {
+        const password = passwordMatch[1]
+        return <EncryptedContent password={password}>{children}</EncryptedContent>
+      }
+    }
+    
+    // 默认 Callout 渲染
+    return h('div', {
+      className: 'notion-callout',
+      style: {
+        backgroundColor: block.format?.block_color && `var(--color-${block.format.block_color}-background)`
+      }
+    }, children)
+  }
 }
 
 const mapPageUrl = id => `https://www.notion.so/${id.replace(/-/g, '')}`
