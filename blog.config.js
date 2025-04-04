@@ -1,7 +1,7 @@
 const BLOG = {
   title: 'unwrapping',
   author: 'zhi xin',
-  email: '386857251@.qq.com',
+  email: '386857251@qq.com',
   link: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
   description: 'Various methods of phase unwrapping.',
   lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
@@ -51,7 +51,7 @@ const BLOG = {
       repo: ''
     },
     cusdisConfig: {
-      appId: 54ec4359-c393-44ed-a7bd-271c9d5ecb08'', // data-app-id
+      appId:'54ec4359-c393-44ed-a7bd-271c9d5ecb08', // data-app-id
       host: 'https://cusdis.com', // data-host, change this if you're using self-hosted version
       scriptSrc: 'https://cusdis.com/js/cusdis.es.js' // change this if you're using self-hosted version
     }
