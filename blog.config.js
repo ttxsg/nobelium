@@ -20,7 +20,7 @@ const BLOG = {
   ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
   socialLink: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
   seo: {
-    keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','相位展开','枝切法','质量图展开法','QGPU','TIE-unwrapping','DCT','PCG','MCF'],
+    keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','QGPU','TIE-unwrapping','DCT','PCG','MCF'],
     googleSiteVerification: 'google-site-verification=9_77LKBrVh0jgrbY3s7DcrAC6RwPhlQ36LL651xFtno' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
