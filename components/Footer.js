@@ -1,8 +1,8 @@
-import BLOG from '@/blog.config'
-import { useLocale } from '@/lib/locale'
-
+import { useConfig } from '@/lib/config'
+import Vercel from '@/components/Vercel'
 const Footer = ({ fullWidth }) => {
-  const locale = useLocale()
+  const BLOG = useConfig()
+
   const d = new Date()
   const y = d.getFullYear()
   const from = +BLOG.since
@@ -16,11 +16,9 @@ const Footer = ({ fullWidth }) => {
       <div className="my-4 text-sm leading-6">
         <div className="flex align-baseline justify-between flex-wrap">
           <p>
-            {BLOG.author} © {from === y || !from ? y : `${from} - ${y}`}
+            © {BLOG.author} {from === y || !from ? y : `${from} - ${y}`}
           </p>
-          <p>
-            欢迎关注公众号 知新小窝
-          </p>
+          <Vercel />
         </div>
       </div>
     </div>
