@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-import BLOG from '@/blog.config'
-=======
+
 import { useConfig } from '@/lib/config'
 import CustomFooterLink from '@/components/CustomFooterLink' 
 
 const Footer = ({ fullWidth }) => {
   const BLOG = useConfig()
->>>>>>> f8f622ffecc431a0813aec21534c5fa7c3665154
 
 const Footer = ({ fullWidth }) => {
   const d = new Date()
@@ -18,10 +15,7 @@ const Footer = ({ fullWidth }) => {
       !fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'
     }`}>
       <hr className="border-gray-200 dark:border-gray-600" />
-<<<<<<< HEAD
-      <div className="my-4 text-center text-sm">
-        <p>© {BLOG.author} {from === y || !from ? y : `${from} - ${y}`}</p>
-=======
+
       <div className="my-4 text-sm leading-6">
         <div className="flex align-baseline justify-between flex-wrap">
           <p>
@@ -29,7 +23,6 @@ const Footer = ({ fullWidth }) => {
           </p>
           <CustomFooterLink />  {/* 替换原来的 <Vercel /> */}
         </div>
->>>>>>> f8f622ffecc431a0813aec21534c5fa7c3665154
       </div>
     </footer>
   )
