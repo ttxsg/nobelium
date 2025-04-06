@@ -1,17 +1,10 @@
 const BLOG = {
-<<<<<<< HEAD
-  title: '相位展开',
-  author: 'zhixin',
-  email: '386857251@qq.com',
-  link: 'https://blog.csdn.net/weixin_43608857?spm=1000.2115.3001.5343',
-  description: 'phase unwrapping',
-=======
+
   title: 'Unwrapping',
   author: 'zhixin',
   email: '386857251',
   link: 'https://nobelium.vercel.app',
   description: 'This is an unwrapping website.',
->>>>>>> f8f622ffecc431a0813aec21534c5fa7c3665154
   lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: 'auto', // ['light', 'dark', 'auto'],
@@ -28,13 +21,8 @@ const BLOG = {
   ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
   socialLink: 'https://blog.csdn.net/weixin_43608857?type=blog',
   seo: {
-<<<<<<< HEAD
-    keywords: ['unwrapping', '相位展开', 'phase unwrapping'],
-    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
-=======
     keywords: ['unwrapping', 'phase unwrapping', 'zernike','unwrapped','QGPU','TIE-unwrapping','DCT','PCG','MCF','相位展开','枝切法','最小成本流','深度学习相位展开','deeplearing unwrapping'],
     googleSiteVerification: 'google-site-verification=9_77LKBrVh0jgrbY3s7DcrAC6RwPhlQ36LL651xFtno' // Remove the value or replace it with your own google site verification code
->>>>>>> f8f622ffecc431a0813aec21534c5fa7c3665154
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
