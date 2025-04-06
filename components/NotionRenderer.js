@@ -5,6 +5,7 @@ import { getTextContent } from 'notion-utils'
 import { FONTS_SANS, FONTS_SERIF } from '@/consts'
 import { useConfig } from '@/lib/config'
 import Toggle from '@/components/notion-blocks/Toggle'
+import EncryptedContent from '@/components/EncryptedContent'
 
 // Lazy-load some heavy components & override the renderers of some block types
 const components = {
@@ -13,7 +14,20 @@ const components = {
   // Code block
   Code: dynamic(async () => {
     return function CodeSwitch (props) {
-      switch (getTextContent(props.block.properties.language)) {
+      const language = getTextContent(props.block.properties.language)
+      const content = getTextContent(props.block.properties.title)
+      
+      // 检查是否是加密内容（以 "ENCRYPTED:" 开头的内容）
+      if (content.startsWith('ENCRYPTED:')) {
+        // 提取密码和加密内容
+        const firstLine = content.split('\n')[0]
+        const password = firstLine.replace('ENCRYPTED:', '').trim()
+        const encryptedContent = content.substring(content.indexOf('\n') + 1)
+        
+        return <EncryptedContent password={password}>{encryptedContent}</EncryptedContent>
+      }
+      
+      switch (language) {
         case 'Mermaid':
           return h(
             dynamic(() => {
@@ -93,7 +107,28 @@ const components = {
 
   toggle_nobelium: ({ block, children }) => (
     <Toggle block={block}>{children}</Toggle>
-  )
+  ),
+
+  // 新增：添加 Callout 块识别加密内容
+  callout: ({ block, children }) => {
+    const text = getTextContent(block.properties?.title) || ''
+    if (text.startsWith('🔒')) {
+      // 查找 "password: xxx" 模式
+      const passwordMatch = text.match(/password:\s*(\S+)/i)
+      if (passwordMatch && passwordMatch[1]) {
+        const password = passwordMatch[1]
+        return <EncryptedContent password={password}>{children}</EncryptedContent>
+      }
+    }
+    
+    // 默认 Callout 渲染
+    return h('div', {
+      className: 'notion-callout',
+      style: {
+        backgroundColor: block.format?.block_color && `var(--color-${block.format.block_color}-background)`
+      }
+    }, children)
+  }
 }
 
 const mapPageUrl = id => `https://www.notion.so/${id.replace(/-/g, '')}`
