@@ -3,6 +3,7 @@ import cn from 'classnames'
 import { config } from '@/lib/server/config'
 import tailwind from '@/tailwind.config'
 import CJK from '@/lib/cjk'
+
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -18,6 +19,7 @@ class MyDocument extends Document {
     return (
       <Html lang={config.lang} className={cn(initialColorScheme)}>
         <Head>
+          <meta name="baidu-site-verification" content="codeva-8LRQdEkubP" />
           {config.font && config.font === 'serif'
             ? (
             <>
