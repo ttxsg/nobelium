@@ -1,6 +1,7 @@
 
 import { useConfig } from '@/lib/config'
 import CustomFooterLink from '@/components/CustomFooterLink' 
+import BLOG from '@/blog.config'
 
 const Footer = ({ fullWidth }) => {
   const BLOG = useConfig()
